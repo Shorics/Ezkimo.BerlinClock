@@ -12,21 +12,24 @@ namespace Ezkimo.BerlinClock.Tests.Types
             yield return new object[] { new TimeSpan(2, 37, 0), 0 };
             yield return new object[] { new TimeSpan(13, 17, 2), 2 };
             yield return new object[] { new TimeSpan(20, 45, 34), 4 };
-            yield return new object[] { new TimeSpan(24, 12, 13), 4 };
+            yield return new object[] { new TimeSpan(24, 12, 13), 0 };
+            yield return new object[] { new TimeSpan(0, 15, 22), 0 };
         }
         public static IEnumerable<object[]> GetTimeSpans_ExpectedLower()
         {
             yield return new object[] { new TimeSpan(2, 37, 0), 2 };
             yield return new object[] { new TimeSpan(13, 17, 2), 3 };
             yield return new object[] { new TimeSpan(20, 45, 34), 0 };
-            yield return new object[] { new TimeSpan(24, 12, 13), 4 };
+            yield return new object[] { new TimeSpan(24, 12, 13), 0 };
+            yield return new object[] { new TimeSpan(0, 15, 22), 0 };
         }
         public static IEnumerable<object[]> GetTimeSpans_ExpectedString()
         {
             yield return new object[] { new TimeSpan(2, 37, 0), "OOOO\nRROO" };
             yield return new object[] { new TimeSpan(13, 17, 2), "RROO\nRRRO" };
             yield return new object[] { new TimeSpan(20, 45, 34), "RRRR\nOOOO" };
-            yield return new object[] { new TimeSpan(24, 12, 13), "RRRR\nRRRR" };
+            yield return new object[] { new TimeSpan(24, 12, 13), "OOOO\nOOOO" };
+            yield return new object[] { new TimeSpan(0, 15, 22), "OOOO\nOOOO" };
         }
 
         [Theory]
