@@ -7,18 +7,22 @@ namespace Ezkimo.BerlinClock
     {
         static void Main(string[] args)
         {
-            string input = "13:17:01";
+            string input;
             TimeSpan time;
+
+            Console.WriteLine("Enter time (format: hh:mm:ss):");
+            input = Console.ReadLine();
 
             if (!TimeSpan.TryParseExact(input, "hh\\:mm\\:ss", CultureInfo.InvariantCulture, out time)) 
             {
-                Console.WriteLine("Input format: hh:mm:ss");
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine("Error: Invalid input format");
                 return;
             }
 
-            var clock = FormatBerlinClock(time);
+            string clock = FormatBerlinClock(time);
 
-            Console.WriteLine(clock);
+            Console.WriteLine("\nBerlin Clock:\n{0}", clock);
 
             return;
         }
