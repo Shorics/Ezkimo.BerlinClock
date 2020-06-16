@@ -10,8 +10,8 @@ namespace Ezkimo.BerlinClock
     class Program
     {
         /// <summary>
-        /// Reads input time string from console, parses it and outputs time in
-        /// Berlin Clock format.
+        /// Reads input time string from console or given first commandline argument, 
+        /// parses it and outputs time in Berlin Clock format.
         /// </summary>
         /// <param name="args">Commandline arguments.</param>
         static void Main(string[] args)
@@ -20,8 +20,15 @@ namespace Ezkimo.BerlinClock
             string input;
             TimeSpan time;
 
-            Console.WriteLine("Enter time (format: hh:mm:ss):");
-            input = Console.ReadLine();
+            if (0 < args.Length)
+            {
+                input = args[0];
+            }
+            else
+            {
+                Console.WriteLine("Enter time (format: hh:mm:ss):");
+                input = Console.ReadLine();
+            }
 
             try
             {
@@ -34,7 +41,15 @@ namespace Ezkimo.BerlinClock
             }
 
             clock = new Clock(time).ToString();
-            Console.WriteLine("\nBerlin Clock:\n{0}", clock);
+
+            if (0 < args.Length)
+            {
+                Console.WriteLine(clock.ToString());
+            }
+            else
+            {
+                Console.WriteLine("\nBerlin Clock:\n{0}", clock);
+            }
         }
 
         /// <summary>
