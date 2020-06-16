@@ -18,7 +18,7 @@ namespace Ezkimo.BerlinClock.Tests.Types
 
         [Theory]
         [MemberData(nameof(GetTimeSpan_ExpectedString))]
-        public void ToString_ValueEven_ReturnStingY(TimeSpan value, string expectedString)
+        public void ToString_ValueEven_ReturnExpected(TimeSpan value, string expectedString)
         {
             var result = new Clock(value).ToString();
 
