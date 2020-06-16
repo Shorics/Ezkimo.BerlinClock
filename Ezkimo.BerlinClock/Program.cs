@@ -21,20 +21,11 @@ namespace Ezkimo.BerlinClock
                 return;
             }
 
-            string clock = FormatBerlinClock(time);
+            string clock = new Clock(time).ToString();
 
             Console.WriteLine("\nBerlin Clock:\n{0}", clock);
 
             return;
-        }
-
-        static string FormatBerlinClock(TimeSpan time)
-        {
-            Hours hours = new Hours(time);
-            Minutes minutes = new Minutes(time);
-            Seconds seconds = new Seconds(time);
-
-            return seconds.ToString() + "\n" + hours.ToString() + "\n" + minutes.ToString();
         }
     }
 }
