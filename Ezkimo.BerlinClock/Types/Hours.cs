@@ -2,11 +2,22 @@ using System;
 
 namespace Ezkimo.BerlinClock.Types
 {
+    /// <summary>
+    /// Represents hours of the Berlin Clock.
+    /// </summary>
     public struct Hours
     {
+        /// <value>Represents upper active lights of Berlin Clock's hours.</value>
         public int UpperValue { get; }
+
+        /// <value>Represents lower active lights of Berlin Clock's hours.</value>
         public int LowerValue { get; }
 
+        /// <summary>
+        /// Extracts hours from a <c>TimeSpan</c> and calculates number of active 
+        /// lights in upper and lower row of the Berlin Clock.
+        /// </summary>
+        /// <param name="time">TimeSpan</param>
         public Hours(TimeSpan time)
         {
             int digits = time.Hours.ToString().Length;
@@ -23,6 +34,10 @@ namespace Ezkimo.BerlinClock.Types
             UpperValue = values[1];
         }
 
+        /// <summary>
+        /// Converts the numeric value of this instance to its equivalent string representation.
+        /// </summary>
+        /// <returns>The string.</returns>
         public override string ToString()
         {
             string lower = "".PadLeft(LowerValue, 'R').PadRight(4, 'O');

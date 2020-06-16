@@ -4,8 +4,16 @@ using System.Globalization;
 
 namespace Ezkimo.BerlinClock
 {
+    /// <summary>
+    /// Main entry point.
+    /// </summary>
     class Program
     {
+        /// <summary>
+        /// Reads input time string from console, parses it and outputs time in
+        /// Berlin Clock format.
+        /// </summary>
+        /// <param name="args">Commandline arguments.</param>
         static void Main(string[] args)
         {
             string clock;
@@ -29,6 +37,10 @@ namespace Ezkimo.BerlinClock
             Console.WriteLine("\nBerlin Clock:\n{0}", clock);
         }
 
+        /// <summary>
+        /// Writes an exception message red colored to console window.
+        /// </summary>
+        /// <param name="e">Exception with message to write.</param>
         static void WriteError(Exception e)
         {
             var defaultColor = Console.ForegroundColor;

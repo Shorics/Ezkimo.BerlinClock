@@ -5,6 +5,9 @@ using BaseFormatException = System.FormatException;
 
 namespace Ezkimo.BerlinClock.Exceptions
 {
+    /// <summary>
+    /// Exception to be thrown on parsing error includes predefined message.
+    /// </summary>
     public class FormatException : BaseFormatException
     {
         public override string Message { get; } = "Invalid input format. Required format: \"hh:mm:ss\"";
