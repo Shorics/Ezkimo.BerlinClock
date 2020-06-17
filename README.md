@@ -2,6 +2,8 @@
 - [Description](#description)
 - [Task](#task)
 - [Example](#example)
+- [Run Tests](#run-tests)
+- [Build](#build)
   
 ## Description
 https://fotoeins.com/2017/12/11/my-berlin-mengenlehreuhr-berlin-clock/
@@ -31,3 +33,13 @@ Output
     RRRO
     YYROOOOOOOO
     YYOO
+
+## Run Tests
+```sh
+dotnet test
+```
+
+## Build
+```sh
+dotnet build --configuration Release 
+```
