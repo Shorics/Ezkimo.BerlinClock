@@ -4,6 +4,9 @@
 - [Example](#example)
 - [Run Tests](#run-tests)
 - [Build](#build)
+- [Run App](#run-app)
+  - [as commandline argument](#as-commandline-argument)
+  - [with input prompt](#with-input-prompt)
   
 ## Description
 https://fotoeins.com/2017/12/11/my-berlin-mengenlehreuhr-berlin-clock/
@@ -42,4 +45,14 @@ dotnet test
 ## Build
 ```sh
 dotnet build --configuration Release 
+```
+
+## Run App
+### as commandline argument
+```sh
+./Ezkimo.BerlinClock.exe 13:17:02
+```
+### with input prompt
+```sh
+./Ezkimo.BerlinClock.exe
 ```
